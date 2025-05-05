@@ -1,3 +1,8 @@
+This repo is revised to adapt to run on Apple Arm M3
+Clone the repo, install Docker and run ```bashdocker buildx build --platform linux/amd64 -t my-tts-app .```
+
+
+
 # viXTTS Demo 🗣️🔥
 
 ## Sử dụng nhanh ✨
