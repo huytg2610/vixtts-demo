@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  vixtts:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./model:/app/model
+      - ./output:/app/output
+    environment:
+      - CUDA_VISIBLE_DEVICES=-1  # Không sử dụng GPU 

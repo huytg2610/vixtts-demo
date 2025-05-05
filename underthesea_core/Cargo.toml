@@ -1,0 +1,38 @@
+[package]
+name = "underthesea_core"
+version = "1.0.4"
+homepage = "https://github.com/undertheseanlp/underthesea/tree/main/extensions/underthesea_core"
+repository = "https://github.com/undertheseanlp/underthesea/"
+authors = ["Vu Anh <anhv.ict91@gmail.com>"]
+license = "GPL-3.0"
+edition = "2021"
+readme = "README.md"
+description = "Underthesea Core"
+
+exclude = ["rust-toolchain", "target/*", "Cargo.lock", "benches/*.txt"]
+
+[lib]
+name = "underthesea_core"
+path = "src/lib.rs"
+crate-type = ["cdylib", "rlib"]
+
+#[[bench]]
+#name = "lab"
+#harness = false
+
+[[bench]]
+name = "featurizers"
+harness = false
+
+[dependencies]
+serde = { version = "1.0", features = [ "derive" ] }
+regex = "1"
+rayon = "1.5"
+crfs = "0.1"
+
+[dependencies.pyo3]
+version = "0.15.0"
+features = ["extension-module"]
+
+[dev-dependencies]
+criterion = "0.3.5"
